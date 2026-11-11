@@ -1,15 +1,21 @@
-
-
 // tlacitkoo
 const runner = document.getElementById("runaway-btn");
+const boardElement = document.getElementById('computer-board');
+const shotsText = document.getElementById('shots');
+const statusText = document.getElementById('status');
+const resultElement = document.getElementById('result');
+const shotsCount = 5
 
+const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
+// tlacitkoo
 runner.addEventListener("mouseover", () => {
     const positionBut = runner.getBoundingClientRect();
 
-    const jump = 200;
+    const jump = 100;
 
-    let moveX = (Math.random() * jump) - 100;
-    let moveY = (Math.random() * jump) - 100; //max. random hodnota bude 200px, ale skok do libovolnych stran chceme 100px -> takže x∈[0;200)-100, což může být jak kladné číslo (posun doprava) nebo záporné číslo (posun doleva)
+    let moveX = (Math.random() * jump) - 50;
+    let moveY = (Math.random() * jump) - 50; //max. random hodnota bude 200px, ale skok do libovolnych stran chceme 100px -> takže x∈[0;200)-100, což může být jak kladné číslo (posun doprava) nebo záporné číslo (posun doleva)
 
     if (positionBut.right + moveX > window.innerWidth) {
         moveX = -Math.abs(moveX);

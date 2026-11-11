@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>Battlee:)</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="lscript.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-<button id="runaway-btn">Restart</button>
+<main>
+    <h1>Námořní bitva</h1>
+    <p>Najděte a potopte všechny lodě počítače.</p>
+
+    <div class="game-info">
+        <p id="shots"></p>
+        <button id="runaway-btn">Start</button>
+    </div>
+    <p id="status" role="status"></p>
+    <div id="result" hidden></div>
+
+    <h2>Pole počítače</h2>
+    <div id="computer-board" class="board" aria-label="Pole počítače"></div>
+
+    <p class="legend"><span>× Zásah</span><span>• Voda</span></p>
+
+    <h2>Pravidla hry</h2>
+    <p>Počítač rozmístí 10 lodí, které se nesmějí dotýkat ani rohem.
+        Máte 50 výstřelů na potopení celé flotily. Každý výstřel se počítá,
+        ať zasáhnete loď, nebo vodu. Do stejného políčka nelze střílet dvakrát.</p>
+</main>
 </body>
 </html>
