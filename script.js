@@ -3,7 +3,7 @@ const shotsText = document.getElementById('shots');
 const statusText = document.getElementById('status');
 const resultElement = document.getElementById('result');
 const runner = document.getElementById('runaway-btn');
-const shotsCount = 5
+const shotsCount = 75
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
