@@ -73,3 +73,29 @@ function randomBoard() {
         if (board.ships.length === fleet.length) return board;
     }
 }
+
+function shipAt(board, cell) {
+    // вернет, ЕСЛИ найдёт, массив с координатами одного корабля
+    // ищет по одной точке
+    return board.ships.find(shipObj => shipObj.cells.includes(cell)); // AI used, Model: Gemini-Pro
+}
+
+function isSunk(board, shipObj) {
+    return shipObj.cells.every(cell => board.shots[cell]); // AI used, Model: Gemini-Pro
+}
+
+function shoot(board, cell) {
+    if (board.shots[cell] === true) return null;
+
+    board.shots[cell] = true;
+
+    const shipObj = shipAt(board, cell);
+
+    if (!shipObj) return 'miss';
+
+    return isSunk(board, shipObj) ? 'sunk' : 'hit';
+}
+
+function allShipsSunk(board) {
+    return board.ships.every(shipObj => isSunk(board, shipObj)); // AI used, Model: Gemini-Pro
+}

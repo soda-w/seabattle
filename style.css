@@ -1,7 +1,117 @@
-#runaway-btn{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    padding: 10px 20px;
+/**
+AI Generated
+Model: Gemini-Pro
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #edf3f7;
+    color: #20394a;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    width: 390px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.game-info, .legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 22px 0;
+}
+
+button {
+    padding: 8px 14px;
+    border: 1px solid #315d77;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+
     transition: transform 0.2s ease;
+}
+
+#status {
+    min-height: 22px;
+}
+
+#result {
+    margin: 15px 0;
+    padding: 14px;
+    border: 2px solid #315d77;
+    background: white;
+    font-weight: bold;
+}
+
+#result.win {
+    border-color: #38824b;
+    color: #246235;
+}
+
+#result.lose {
+    border-color: #b94444;
+    color: #8e2929;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 20px repeat(10, 32px);
+    grid-template-rows: 20px repeat(10, 32px);
+    gap: 2px;
+}
+
+.coordinate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell {
+    padding: 0;
+    border: 1px solid #9ab7c9;
+    background: white;
+    color: #20394a;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cell:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+.cell.miss {
+    background: #dcebf4;
+}
+
+.cell.hit {
+    background: #f4b683;
+}
+
+.cell.sunk {
+    background: #b94444;
+    color: white;
+}
+
+.cell.ship {
+    background: #7497aa;
+}
+
+.legend {
+    font-size: 14px;
 }
